@@ -33,6 +33,7 @@ module Middleman
         paths.each do |p|
           begin
             dst = destination_path(p)
+            next unless @options.overwrite || !dst.exist? || (File.mtime(dst) < File.mtime(p))
             exec_convert_tool(p, dst)
             yield (src_file = File.new(p)), (dest_file = File.new(dst.to_s))
           rescue StandardError => e

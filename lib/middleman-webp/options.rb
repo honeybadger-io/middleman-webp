@@ -4,7 +4,7 @@ module Middleman
   module WebP
     class Options
       attr_reader :ignore, :verbose, :append_extension, :allow_skip,
-        :run_before_build
+        :run_before_build, :overwrite
 
       def initialize(options = {})
         @ignore = options[:ignore] || []
@@ -22,6 +22,7 @@ module Middleman
 
         @append_extension = options[:append_extension] || false
         @allow_skip = !(false == options[:allow_skip])
+        @overwrite = !(false == options[:overwrite])
         @run_before_build = options[:run_before_build] || false
       end
 

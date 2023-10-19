@@ -20,6 +20,7 @@ module Middleman
            'to help debugging.')
     option(:allow_skip, true, 'Skip saving .webp files which are larger than '\
            'their source')
+    option(:overwrite, true, 'Overwrite existing files')
     option(:run_before_build, false, 'Run before build and save .webp files in'\
            ' source dir')
 
